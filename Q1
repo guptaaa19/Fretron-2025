@@ -1,0 +1,25 @@
+//Question 1:
+def plot_flight_paths(flight_data):
+
+  plt.figure(figsize=(8, 6))
+
+  for flight_name, coordinates in flight_data.items():
+    x_coords, y_coords = zip(*coordinates)
+    plt.plot(x_coords, y_coords, marker='o', label=flight_name)
+
+  plt.title('Flight Paths')
+  plt.xlabel('X Coordinate')
+  plt.ylabel('Y Coordinate')
+  plt.legend()
+  plt.grid(False)
+  plt.show()
+
+# Example flight data (same as provided in the task)
+flight_data = {
+    'Flight 1': [(1, 1), (2, 2), (3, 3)],
+    'Flight 2': [(1, 1), (2, 4), (3, 2)],
+    'Flight 3': [(1, 1), (4, 2), (3, 4)]
+}
+
+plot_flight_paths(flight_data)
+
